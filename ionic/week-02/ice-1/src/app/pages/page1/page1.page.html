@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>page1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">page1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Personal Profile</ion-label>
+    <ion-input
+      placeholder="First Name"
+      [(ngModel)]="man.f_name"
+    ></ion-input>
+    <ion-input
+      placeholder="Last Name"
+      [(ngModel)]="man.l_name"
+    ></ion-input>
+    <ion-input
+      placeholder="Nickname"
+      [(ngModel)]="man.n_name"
+    ></ion-input>
+  </ion-item>
+
+  <app-c1 [c1Info]="man"></app-c1>
+</ion-content>
