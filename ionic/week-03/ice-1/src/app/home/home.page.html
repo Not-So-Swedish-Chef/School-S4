@@ -13,8 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="routerLink">
+    <ion-button [routerLink]="['/page1']">Page 1</ion-button>
+    <ion-button [routerLink]="['/page2']">Page 2</ion-button>
+  </div>
+
+  <div id="routerNavigate">
+    <ion-button (click)="goPage1()">Page 1</ion-button>
+    <ion-button (click)="goPage2()">Page 2</ion-button>
   </div>
 </ion-content>
