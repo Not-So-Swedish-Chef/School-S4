@@ -14,4 +14,15 @@
   </ion-header>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <div id="buttons">
+
+    <ion-button [routerLink]="['/page1']">Page 1</ion-button>
+    <ion-button [routerLink]="['/page2']">Page 2</ion-button>
+  </div>
+
+  <div id="input">
+    <ion-input [(ngModel)]='myMsg'>Enter Data</ion-input>
+    <ion-button (click)='setData()'>Set Data</ion-button>
+  </div>
 </ion-content>
