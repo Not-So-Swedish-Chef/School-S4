@@ -1,0 +1,7 @@
+{
+  "name": "Midterm_Evan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
