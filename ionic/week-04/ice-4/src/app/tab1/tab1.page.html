@@ -14,4 +14,13 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <div>
+    <ion-button [routerLink]="['/page1']">Page 1 - Static</ion-button>
+    <ion-button (click)="goPage1()">Page 1 Static Data</ion-button>
+  </div>
+  <div>
+    <ion-button [routerLink]="['/page1', 'Hello']"> Page 1 Required Param (Router Link)</ion-button>
+    <ion-button (click)="goPage1b()">Page 1 Required Param (router.navigate)</ion-button>
+  </div>
 </ion-content>

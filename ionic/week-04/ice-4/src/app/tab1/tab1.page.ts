@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,25 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private router : Router) {}
 
+  goPage1() {
+    this.router.navigate(['/page1'])
+        .then(
+          nav => { console.log(nav); },
+          err => { console.log(err); }
+        );
+  }
+
+  goPage1b() {
+    let p1Data1 = 'Hello Page 1';
+    let p1Data2 = 'Hello Page 1 by URL';
+
+    this.router.navigate(['/page1',p1Data1])
+        .then(
+          nav => { console.log(nav); },
+          err => { console.log(err); }
+        );
+//      this.router.navigateByURL('/page1/${p1Data2}');
+  }
 }

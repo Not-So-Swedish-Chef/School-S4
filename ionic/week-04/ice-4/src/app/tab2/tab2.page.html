@@ -14,4 +14,7 @@
   </ion-header>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-button [routerLink]="['/page1',{id : 'A1'}]">Page 1</ion-button>
+  <ion-button (click)="goPage1()">Page 1 Optional Param</ion-button>
 </ion-content>
