@@ -1,7 +1,0 @@
-<div *ngIf="status_data">
-  <h2>ONTARIO STATUS OF CASES</h2>
-  <br />
-  <p *ngFor="let label of status_data.label; let i = index">
-    <b>{{ label }}:</b> {{ status_data.numbers[i] | number:'1.0-0' }}
-  </p>
-</div>
