@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Canada Summary
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Canada Summary</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="content">
+    <div id="cards">
+      <app-c-updates></app-c-updates>
+      <br />
+      <app-c-status></app-c-status>
+    </div>
+
+    <div id="source">
+      <p>https://health-infobase.canada.ca and https://covid-19.ontario.ca as of Jan 31, 2021.</p>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ontario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ontario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="content">
+    <div id="cards">
+      <app-c-status></app-c-status>
+
+      <ion-card *ngIf="messages.length > 0" color="light">
+        <ion-card-header>
+          <ion-card-title>Saved Messages</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let msg of messages">
+              <ion-label>
+                <p><i>{{ msg.date }}</i> {{ msg.message }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>SUMMARY OF TOTAL DOSES ADMINISTERED</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let entry of entries" [routerLink]="['/report', entry.id]">
+              {{ entry.report_date }}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div id="source">
+      <p>https://health-infobase.canada.ca and https://covid-19.ontario.ca as of Jan 31, 2021.</p>
+    </div>
+  </div>
+
+</ion-content>

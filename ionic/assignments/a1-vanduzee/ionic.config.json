@@ -1,0 +1,7 @@
+{
+  "name": "a1-vanduzee",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

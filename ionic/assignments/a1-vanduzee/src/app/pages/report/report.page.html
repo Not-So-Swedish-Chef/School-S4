@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateBack()" fill="clear">
+        <ion-icon name="chevron-back-circle-sharp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>COVID-19 Vaccine Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="navigateBack()" fill="clear">
+          <ion-icon name="chevron-back-circle-sharp" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title size="large">COVID-19 Vaccine Data</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-c-status></app-c-status>
+
+  <ion-card *ngIf="entry" color="medium">
+    <ion-card-content>
+      <table>
+        <tr>
+          <td>Report Data</td>
+          <td class="right-align">{{ entry[1] | date:'YYYY-MM-dd' }}</td>
+        </tr>
+        <tr>
+          <td>Previous Day Doses Administered</td>
+          <td class="right-align">{{ entry[2] | number }}</td>
+        </tr>
+        <tr>
+          <td>Total Doses Administered</td>
+          <td class="right-align">{{ entry[6] | number }}</td>
+        </tr>
+        <tr *ngIf="entry[9]">
+          <td>Total Doses in Fully Vaccinated Individuals</td>
+          <td class="right-align">{{ entry[9] | number }}</td>
+        </tr>
+        <tr>
+          <td>Total Individuals Fully Vaccinated</td>
+          <td class="right-align">{{ entry[10] | number }}</td>
+        </tr>
+        <tr *ngIf="entry[11]">
+          <td>Total Individuals with Three Doses</td>
+          <td class="right-align">{{ entry[11] | number }}</td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!entry" color="danger">
+    <ion-card-header>
+      <ion-card-title>Error</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Entry not found...</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="stacked">Follow Up Message</ion-label>
+    <ion-input [(ngModel)]="user_message" placeholder="Enter your message here" id="message-input"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="saveMessage()" id="send-button">Save</ion-button>
+</ion-content>

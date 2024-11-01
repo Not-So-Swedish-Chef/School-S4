@@ -1,0 +1,31 @@
+#content {
+  height : 100%;
+  display : flex;
+  flex-direction : column;
+}
+
+#cards {
+  flex : 1;
+  overflow-y : auto;
+}
+
+#source {
+  height : fit-content;
+  width : 100%;
+  color : black;
+  background-color : lightgray;
+  //border : 2px black solid;
+  //border-radius : 5px;
+  margin : 0 auto;
+  position : sticky;
+  bottom : 0;
+}
+
+#cards, #source {
+  padding : 5px 20px;
+}
+
+ion-title {
+  text-align : center;
+  font-weight : bolder;
+}
