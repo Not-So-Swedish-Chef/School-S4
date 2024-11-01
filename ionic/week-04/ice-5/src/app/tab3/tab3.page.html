@@ -14,4 +14,20 @@
   </ion-header>
 
   <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <div id="page2">
+    <ion-button [routerLink]="['/page2']"
+                [queryParams]="{name:'Andy',score:99}">
+      Page 2 Query Param routerLink
+    </ion-button>
+    <ion-button (click)="goPage2()">Page 2 Query Param</ion-button>
+  </div>
+
+  <div id="page3">
+    <ion-button [routerLink]="['/page3']"
+                [state]="{name:'Andy',comments:'State Property'}">
+      Page 3 State Property (routerLink)
+    </ion-button>
+    <ion-button (click)="goPage3()">Page 3 State Property (router.navigate)</ion-button>
+  </div>
 </ion-content>
