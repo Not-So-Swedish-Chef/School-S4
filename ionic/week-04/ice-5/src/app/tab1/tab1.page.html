@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <div>
+    <ion-button [routerLink]="['/page1']">Page 1 - Static</ion-button>
+    <ion-button (click)="goPage1()">Page 1 Static Data</ion-button>
+  </div>
+  <div>
+    <ion-button [routerLink]="['/page1', 'Hello']"> Page 1 Required Param (Router Link)</ion-button>
+    <ion-button (click)="goPage1b()">Page 1 Required Param (router.navigate)</ion-button>
+  </div>
+</ion-content>
