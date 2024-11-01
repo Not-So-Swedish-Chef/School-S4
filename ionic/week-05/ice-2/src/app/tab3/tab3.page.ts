@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  message : any;
 
-  constructor() {}
+  constructor(private sharedService : DataService) {}
+
+  ngOnInit() {
+    this.sharedService.asObserver.subscribe(
+      shmessage => { this.message = shmessage; }
+    )
+  }
 
 }

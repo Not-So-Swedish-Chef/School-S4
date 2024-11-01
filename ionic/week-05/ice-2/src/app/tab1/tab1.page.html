@@ -14,4 +14,11 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <div id="input">
+    <ion-input [(ngModel)]='inData'>Enter Data:</ion-input>
+  </div>
+  <div id="component">
+    <app-comp-1 [c1Input]='inData'></app-comp-1>
+  </div>
 </ion-content>

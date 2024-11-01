@@ -14,4 +14,8 @@
   </ion-header>
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <app-comp-2 (childMsg)="getMessage($event)"></app-comp-2>
+  <br /><br />
+  {{ myMsg }}
 </ion-content>
