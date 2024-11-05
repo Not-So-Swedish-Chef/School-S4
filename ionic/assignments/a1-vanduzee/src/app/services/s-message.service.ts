@@ -16,7 +16,9 @@ export class SMessageService {
     return this.messages;
   }
 
-  deleteMessage() {
-
+  deleteMessage(index : number) : void {
+    if (index > -1 ) {
+      this.messages.splice(index, 1);
+    }
   }
 }
