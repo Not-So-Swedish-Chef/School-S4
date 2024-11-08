@@ -1,0 +1,18 @@
+<form>
+  <ion-item>
+    <ion-label position="stacked">Course Number</ion-label>
+    <ion-input required type="text" [(ngModel)]="cId" name="cId"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Day</ion-label>
+    <ion-input [(ngModel)]="wDay" name="wDay"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Professor</ion-label>
+    <ion-input [(ngModel)]="prof" name="prof"></ion-input>
+  </ion-item>
+  <ion-button type="submit" (click)="insert()">Add Course</ion-button>
+  <ion-button type="submit" (click)="retrieve()">Retrieve Course</ion-button>
+</form>
+{{outMsg.msg}}
+<p>THIS IS HALLOWEEN</p>

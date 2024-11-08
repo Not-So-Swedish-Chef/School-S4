@@ -1,7 +1,0 @@
-{
-  "name": "ice-2",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
