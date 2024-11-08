@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 import { SMessageService } from 'src/app/services/s-message.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -16,7 +17,8 @@ export class Tab2Page implements OnInit {
   constructor(
       private http: HttpClient,
       private router: Router,
-      private message_services : SMessageService
+      private message_services : SMessageService,
+      private alert_controller : AlertController
     ) {}
 
   ngOnInit(): void {
@@ -38,5 +40,30 @@ export class Tab2Page implements OnInit {
 
   viewDetails(entry: any): void {
     this.router.navigate(['/report', entry.id]);
+  }
+
+  async confirmDelete(index: number) {
+    const alert = await this.alert_controller.create({
+      header: 'Confirm Delete',
+      message: 'Are you sure you want to delete this message?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Delete cancelled');
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.message_services.deleteMessage(index);
+            this.messages = this.message_services.getMessages();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

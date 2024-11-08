@@ -35,10 +35,6 @@ export class ReportPage implements OnInit {
     });
   }
 
-  navigateBack(): void {
-    this.router.navigate(['/tabs/tab2']);
-  }
-
   async saveMessage(): Promise<void> {
     if (this.user_message.trim()) {
       const formattedDate = this.entry
