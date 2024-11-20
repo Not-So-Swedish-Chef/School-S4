@@ -1,0 +1,12 @@
+mongoexport -d solarsystem -c planets -o planets.json -q "{ \"name\":{ \"$ne\" : \"Pluto\" }, \"distance\" : { \"$gt\" :50 }, \"radius\" : { \"$lt\" : 6371 } } "
+
+mongoexport -d solarsystem -c planets -o planets.json -q "{ \"name\" : { \"$ne\" : \"Pluto\" }, \"distance\" : { \"$gt\" : 50 }, \"radius\" : { \"$lt\" : 6371 } } " --sort {name:-1} --fields=name,radius
+
+db.planets.find(
+  {
+    _name:{$ne:"Pluto"},
+    _distance_millionKm:{$gt:50},
+    _radius_km:{$lt:6371}
+  },
+  {_id:1,_name:1,_radius_km:1}
+).sort({name:-1});

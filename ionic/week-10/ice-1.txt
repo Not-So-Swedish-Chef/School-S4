@@ -1,0 +1,36 @@
+// Creation Statements
+use solarsystem;
+db.createCollection("planets");
+db.insertMany([
+  {_name:"Mercury", _distance_millionKm:   57.9, _radius_km: 2340, _population_million:  7},
+  {_name:  "Venus", _distance_millionKm:  108.2, _radius_km: 5250, _population_million: 12},
+  {_name: "Zargon", _distance_millionKm: 123.45, _radius_km: 7500, _population_million:  8}
+]);
+
+// to avoid repetitive field name input, do the following (after condensing):
+// const planetsData = [
+//   ["Mercury", 57.9, 2340, 7],
+//   ["Venus", 108.2, 5250, 12],
+//   ["Zargon", 123.45, 7500, 8],
+// ];
+// 
+// const planets = planetsData.map(([name, distance, radius, population]) => ({
+//   _name: name,
+//   _distance_millionKm: distance,
+//   _radius_km: radius,
+//   _population_million: population,
+// }));
+//
+// db.planets.insertMany(planets);
+
+// Find Statements
+db.planets.find().pretty();
+
+db.planets.find(
+  {},
+  {_id:0,_name:1,_distance_millionKm:1,}
+).pretty();
+
+db.planets.find(
+  {_name:"Mercury"}
+).pretty();

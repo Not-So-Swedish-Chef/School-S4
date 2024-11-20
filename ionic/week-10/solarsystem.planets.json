@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "673dc79c0e31bc396a0d8191"
+  },
+  "_name": "Venus",
+  "_distance_millionKm": 108.2
+},
+{
+  "_id": {
+    "$oid": "673dc79c0e31bc396a0d8190"
+  },
+  "_name": "Mercury",
+  "_distance_millionKm": 57.9
+}]

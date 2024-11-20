@@ -1,0 +1,24 @@
+// Assumes the Folloing has been entered:
+// Creation Statements
+// use solarsystem;
+// db.createCollection("planets");
+// db.insertMany([
+//   {_name:"Mercury", _distance_millionKm:   57.9, _radius_km: 2340, _population_million:  7},
+//   {_name:  "Venus", _distance_millionKm:  108.2, _radius_km: 5250, _population_million: 12},
+//   {_name: "Zargon", _distance_millionKm: 123.45, _radius_km: 7500, _population_million:  8}
+// ]);
+
+db.planets.deleteOne(
+  {"_name":"Zargon"}
+);
+
+db.planets.updateOne(
+  {"_name":"Venus"},
+  {$set:{"_radius_km":6100}}
+);
+
+db.planets.updateOne(
+  {"_name":"Pluto"},
+  {$set:{"_distance_millionKm":5910,"_radius_km":3000}},
+  {upsert:true}
+);
