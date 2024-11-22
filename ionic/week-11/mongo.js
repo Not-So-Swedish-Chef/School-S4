@@ -25,4 +25,22 @@ const db = mongoose.connection;
 db.on('error', (err) => { console.log(err); })
 db.once('open', () => {
     // CRUD Operations
+
+    //Add Single Document
+    app.post('/insert', (req, res) => {
+        input = req.body.params;
+        course.create(input).then(
+            result => { res.send({"message": 'Record added'}); },
+            err => { res.send(err.message); }
+        ).catch( err => { console.log(err); } );
+    });
+
+    //Get Multiple Documents
+    app.get('/retrieve', (req, res) => {
+        input = req.query;
+        course.find(input).then(
+            result => { res.send(result); },
+            err => { res.send(err.message); }
+        ).catch( err => { console.log(err); } );
+    });
 });
