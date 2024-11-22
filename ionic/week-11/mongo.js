@@ -8,3 +8,21 @@ app.use(bodyParser.json());
 app.use(cors());
 app.listen(port, () =>
     console.log(`Server running at localhost: ${port}!`));
+
+const mongoose = require ('mongoose');
+const DataBase = 'mongodb://0.0.0.0:27017/sheridan';
+mongoose.set('strictQuery', true);
+
+const courseSchema = new mongoose.Schema({
+    cid: String,
+    wday: String,
+    prof: String
+});
+
+const course = mongoose.model('courses', courseSchema);
+mongoose.connect(DataBase);
+const db = mongoose.connection;
+db.on('error', (err) => { console.log(err); })
+db.once('open', () => {
+    // CRUD Operations
+});
