@@ -14,9 +14,9 @@ const DataBase = 'mongodb://0.0.0.0:27017/sheridan';
 mongoose.set('strictQuery', true);
 
 const courseSchema = new mongoose.Schema({
-    cid: String,
-    wday: String,
-    prof: String
+    cid : String,
+    wday : String,
+    prof : String
 });
 
 const course = mongoose.model('courses', courseSchema);
