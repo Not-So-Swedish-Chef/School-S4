@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ListingPageRoutingModule } from './listing-routing.module';
 
 import { ListingPage } from './listing.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListingPageRoutingModule
+    ListingPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [ListingPage]
 })

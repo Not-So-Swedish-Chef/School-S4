@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { UpdatePageRoutingModule } from './update-routing.module';
 
 import { UpdatePage } from './update.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UpdatePageRoutingModule
+    UpdatePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [UpdatePage]
 })
