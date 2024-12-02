@@ -1,13 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>main</ion-title>
+    <ion-title>Main Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">main</ion-title>
+      <ion-title size="large">Main Page</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="content">
+    <h1>Database Management</h1>
+
+    <!-- Button Bar -->
+    <div class="button-bar">
+      <button (click)="initDb()" [disabled]="isInit">Create a New Database</button>
+      <button (click)="loadDb()" [disabled]="isInit">Load Database from File</button>
+      <button (click)="saveDb()" [disabled]="!isInit">Save Database to File</button>
+      <button (click)="dropDb()" [disabled]="!isInit">Clear Current Database</button>
+    </div>
+
+    <!-- Database Stats -->
+    <div class="db-stats">
+      <ng-container *ngIf="isInit; else noDb">
+        <p><strong>Database Name :</strong> {{ dbName }}</p>
+        <p><strong>Collection Name :</strong> {{ collectionName }}</p>
+        <p><strong>Items Stored :</strong> {{ itemCount }}</p>
+      </ng-container>
+      <ng-template #noDb>
+        <p>No Database Initialized.</p>
+      </ng-template>
+    </div>
+  </div>
 </ion-content>

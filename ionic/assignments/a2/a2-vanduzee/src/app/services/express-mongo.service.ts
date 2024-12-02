@@ -8,13 +8,19 @@ export class ExpressMongoService {
 
   constructor(private http : HttpClient) { }
 
-  initialize(params : any) { return this.http.post('http://127.0.0.1:8887/create/', { params }); }
+  initialize(params : any) { return this.http.post('http://127.0.0.1:8887/create', { params }); } //creates new db with 5 sample questions
 
-  retrieve(params : any) { return this.http.get('http://127.0.0.1:8887/retrieve/', { params }); }
+  load(params : any) { return this.http.post('http://127.0.0.1:8887/load', { params : {} }); } //loads db from file
 
-  insert(params : any) { return this.http.post('http://127.0.0.1:8887/insert/', { params }); }
+  save(params : any) { return this.http.get('http://127.0.0.1:8887/save', { params : {} }); } //saves db to file
 
-  update(params : any) { return this.http.put('http://127.0.0.1:8887/update/', { params }); }
+  retrieve(params : any) { return this.http.get('http://127.0.0.1:8887/retrieve', { params }); } //retrieves many documents from db
 
-  remove(params : any) { return this.http.delete('http://127.0.0.1:8887/remove/', { params }); }
+  insert(params : any) { return this.http.post('http://127.0.0.1:8887/insert', { params }); } //inserts one document into db
+
+  update(params : any) { return this.http.put('http://127.0.0.1:8887/update', { params }); } //modifies one document in db
+
+  remove(params : any) { return this.http.delete('http://127.0.0.1:8887/remove', { params }); } //removes one document from db
+
+  clear(params : any) { return this.http.post('http://127.0.0.1:8887/clear', { params }); } //clears db - and all documents - from server
 }
