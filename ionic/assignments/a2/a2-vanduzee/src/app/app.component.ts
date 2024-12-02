@@ -12,9 +12,9 @@ export class AppComponent {
 //    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
 //    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
 //    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
-    { title: 'Main', url: '/pages/main', icon: 'warning' },
-    { title: 'Listing', url: '/pages/listing', icon: 'warning' },
-    { title: 'Update', url: '/pages/update', icon: 'warning' },
+    { title: 'Main', url: '/pages/main', icon: 'home-outline' },
+    { title: 'Listing', url: '/pages/listing', icon: 'list-outline' },
+    { title: 'Update', url: '/pages/update', icon: 'stats-chart-outline' },
 
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

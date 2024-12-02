@@ -1,0 +1,24 @@
+.warning {
+  text-align : center;
+  margin : 2rem auto;
+  color : #ff4d4d; /* Red warning color */
+}
+
+.warning h2 {
+  font-size : 1.5rem;
+  font-weight : bold;
+}
+
+.warning p {
+  font-size : 1rem;
+  margin-top : 0.5rem;
+}
+
+ion-list {
+  margin : 1rem;
+}
+
+ion-item {
+  --padding-start : 16px;
+  --padding-end : 16px;
+}
