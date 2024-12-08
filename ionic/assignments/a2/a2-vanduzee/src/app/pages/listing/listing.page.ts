@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ExpressMongoService } from 'src/app/services/express-mongo.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ListingPage implements OnInit {
   items : any[] = [];
   isInit : boolean = false;
 
-  constructor(private mongoService : ExpressMongoService) { }
+  constructor(private mongoService : ExpressMongoService, private router : Router) { }
 
   ngOnInit() {
     this.checkDbStatus();
@@ -36,4 +37,7 @@ export class ListingPage implements OnInit {
     );
   }
 
+  goToUpdatePage(item : any) {
+    this.router.navigate(['/pages/update', item._id]);
+  }
 }

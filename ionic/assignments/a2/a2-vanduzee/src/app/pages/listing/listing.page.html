@@ -13,7 +13,7 @@
 
   <ng-container *ngIf="isInit; else noDb">
     <ion-list>
-      <ion-item *ngFor="let item of items">
+      <ion-item *ngFor="let item of items" (click)="goToUpdatePage(item)">
         <ion-label>
           <h2><strong>{{ item.question }}</strong></h2>
           <p><em>{{ item.answer }}</em></p>

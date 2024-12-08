@@ -47,24 +47,15 @@ app.post('/create', (req, res) => {
     });
     DOCUMENTS = mongoose.model(COLLECTION, SCHEMA);
 
-    DOCUMENTS.create([
-      { question: "What is the term for the boundary of a black hole?", answer: "Event horizon." },
-      { question: "What is the closest star to Earth?", answer: "The Sun." },
-      { question: "What is a light-year?", answer: "The distance light travels in one year." },
-      { question: "What is the primary gas in Earth's atmosphere?", answer: "Nitrogen." },
-      { question: "Which planet is tilted on its side, causing extreme seasons?", answer: "Uranus." },
-    ])
-      .then(() => {
-        collectionInit = true;
-        console.log(`Database (${DATABASE}) and Collection ${COLLECTION} initialized.`);
-        res.send(`Database (${DATABASE}) and Collection ${COLLECTION} initialized.`);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send("Error inserting sample data.");
-      });
+    collectionInit = true;
+    console.log(`Database (${DATABASE}) and Collection ${COLLECTION} initialized.`);
+    res.send(`Database (${DATABASE}) and Collection ${COLLECTION} initialized.`);
+  }).catch((err) => {
+    console.error(err);
+    res.status(500).send("Error initializing database.");
   });
 });
+
 //#endregion
 
 //#region EXPORT (SAVE) CURRENT DB

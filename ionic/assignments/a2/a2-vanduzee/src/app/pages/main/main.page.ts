@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpressMongoService } from 'src/app/services/express-mongo.service';
-import { batchItems } from 'src/assets/data/constants';
+import { batchItems } from 'src/assets/data/constants/preloadData';
 
 @Component({
   selector : 'app-main',
